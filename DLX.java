@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 class DLXSolver2 {
     private static  byte SIZE ;
     public static  short SIZE2 ;
@@ -230,7 +231,7 @@ class DLXSolver2 {
                 row_val[index] = true;          //pos
                 row_val[SIZE2 + SIZE * row + s] = true;     //row
                 row_val[SIZE2*2 + SIZE * col + s] = true;    //col
-                row_val[SIZE2*3 + SIZE * (3 * (row / 3) + (col / 3)) + s] = true;//b
+                row_val[SIZE2*3 + SIZE * (BLOCK_SIZE * (row / BLOCK_SIZE) + (col / BLOCK_SIZE)) + s] = true;//b
                 matrix.add(row_val);
                 listIndex.add(new Index(row, col, (byte) (s + 1)));
             } else {
@@ -239,7 +240,7 @@ class DLXSolver2 {
                     row_val[index] = true;
                     row_val[SIZE2 + SIZE * row + a-1] = true;
                     row_val[SIZE2*2 + SIZE * col + a-1] = true;
-                    row_val[SIZE2*3+ SIZE * (3 * (row / 3) + (col/ 3)) + a-1] = true;
+                    row_val[SIZE2*3+ SIZE * (BLOCK_SIZE * (row / BLOCK_SIZE) + (col/BLOCK_SIZE)) + a-1] = true;
                     matrix.add(row_val);
                     listIndex.add(new Index(row, col, a));
                 }
